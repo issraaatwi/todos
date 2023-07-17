@@ -58,7 +58,7 @@ def update_task(task_id):
 def delete_task(task_id):
     result = db.delete_one({"_id": ObjectId(task_id)})
     if result.deleted_count > 0:
-        return jsonify({"message": "Task deleted successfully"}), 204
+        return jsonify({"message": "Task deleted successfully"}), 200
     return jsonify({"error": "Task not found"}), 404
 
 if __name__ == "__main__":
